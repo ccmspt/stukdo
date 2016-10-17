@@ -1,6 +1,9 @@
 class Task < ApplicationRecord
 	belongs_to :user
 
+	validates :user_id, presence: true
+	validates :context, presence: true
+
 	auto_html_for :context do
 		html_escape
 		image
